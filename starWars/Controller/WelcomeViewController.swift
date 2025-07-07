@@ -1,13 +1,6 @@
-//
-//  ViewController.swift
-//  starWars
-//
-//  Created by Gabrielle Oliveira on 05/07/25.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var characters: UIButton!
     @IBOutlet weak var ships: UIButton!
