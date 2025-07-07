@@ -74,7 +74,7 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailCharactersViewController") as? DetailCharactersViewController {
             detailVC.character = selectedCharacter
             navigationController?.pushViewController(detailVC, animated: true)
         }

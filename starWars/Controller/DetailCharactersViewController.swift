@@ -1,7 +1,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailCharactersViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
