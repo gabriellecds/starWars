@@ -27,6 +27,8 @@ class PlanetsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        fetchPlanets(searchText: "")
     }
     
     func fetchPlanets(searchText: String) {

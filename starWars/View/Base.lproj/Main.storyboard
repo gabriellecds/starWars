@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clJ-mj-TCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2203.8167938931297" y="910.56338028169023"/>
+            <point key="canvasLocation" x="2204" y="666"/>
         </scene>
         <!--Planet Detail View Controller-->
         <scene sceneID="mf5-g1-s5z">
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvD-gF-XbJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971.7557251908397" y="910.56338028169023"/>
+            <point key="canvasLocation" x="2972" y="665"/>
         </scene>
         <!--Ships View Controller-->
         <scene sceneID="4Ep-2h-Ag9">
@@ -305,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Be6-Co-VZ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="144"/>
+            <point key="canvasLocation" x="2204" y="-75"/>
         </scene>
         <!--Ship Detail View Controller-->
         <scene sceneID="0hc-JE-ajC">
@@ -401,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HB-Gw-zAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971.7557251908397" y="143.66197183098592"/>
+            <point key="canvasLocation" x="2972" y="-75"/>
         </scene>
         <!--Characters View Controller-->
         <scene sceneID="3Yn-Ug-5q4">
@@ -414,8 +414,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-sT-Awg">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yg6-Wb-c5E">
+                                <rect key="frame" x="127" y="41" width="138" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QMk-53-Jfe">
-                                <rect key="frame" x="16" y="285" width="361" height="533"/>
+                                <rect key="frame" x="16" y="233" width="361" height="533"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -429,18 +433,134 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" id="1kn-40-7le" userLabel="filterView">
+                                <rect key="frame" x="16" y="516" width="361" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPECIE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-Ch-Zhr">
+                                        <rect key="frame" x="22" y="19" width="57" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amw-FC-Vbx">
+                                        <rect key="frame" x="17" y="48" width="86" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Human"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="Vgy-cb-hes"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-sp-gCi">
+                                        <rect key="frame" x="129" y="48" width="109" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Droid"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="rLj-Vf-j8c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-UO-qjJ">
+                                        <rect key="frame" x="266" y="48" width="73" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Ewoks"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="YuL-7V-F45"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzz-fh-QJb">
+                                        <rect key="frame" x="23" y="91" width="75" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Keshiri"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="flh-gh-3cE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrL-jk-7CW">
+                                        <rect key="frame" x="140" y="91" width="87" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Zeltrons"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="dJ0-6v-yIq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sg-3g-xfN">
+                                        <rect key="frame" x="261" y="91" width="83" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Jawas"/>
+                                        <connections>
+                                            <action selector="speciesButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="6eh-ar-pXK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-2j-3ur">
+                                        <rect key="frame" x="22" y="141" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-Ad-ZAx">
+                                        <rect key="frame" x="17" y="181" width="86" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="MALE"/>
+                                        <connections>
+                                            <action selector="genderButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="fbd-JJ-sxV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRC-n5-4Ww">
+                                        <rect key="frame" x="129" y="181" width="109" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="FEMALE"/>
+                                        <connections>
+                                            <action selector="genderButtonTapped:" destination="2aG-kT-910" eventType="touchUpInside" id="IRs-Ta-4HA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6k-2J-375">
+                                        <rect key="frame" x="17" y="248" width="327" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="SEARCH"/>
+                                        <connections>
+                                            <action selector="applyFilters:" destination="2aG-kT-910" eventType="touchUpInside" id="mNU-2f-ezk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-TB-h4W">
+                                        <rect key="frame" x="286" y="5" width="75" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="RESET"/>
+                                        <connections>
+                                            <action selector="resetFilters:" destination="2aG-kT-910" eventType="touchUpInside" id="FDr-fp-KaK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2e-1R-cTl">
-                                <rect key="frame" x="0.0" y="179" width="393" height="44"/>
+                                <rect key="frame" x="81" y="165" width="312" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="2aG-kT-910" id="7TL-qj-w4b"/>
                                 </connections>
                             </searchBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yg6-Wb-c5E">
-                                <rect key="frame" x="127" y="41" width="138" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt2-KU-zD7">
+                                <rect key="frame" x="13" y="170" width="50" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal.decrease.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="filterButton:" destination="2aG-kT-910" eventType="touchUpInside" id="QaM-nZ-dO9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="80h-en-WFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -453,18 +573,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="sks-bW-loi"/>
                     <connections>
+                        <outlet property="filterView" destination="1kn-40-7le" id="47M-8Z-2VA"/>
+                        <outlet property="resetButton" destination="rN9-TB-h4W" id="RVd-Fv-Z6d"/>
                         <outlet property="searchBar" destination="B2e-1R-cTl" id="Fa1-fT-5SI"/>
+                        <outlet property="searchButton" destination="J6k-2J-375" id="3ff-nS-4f0"/>
                         <outlet property="tableView" destination="QMk-53-Jfe" id="a6t-0Q-ych"/>
+                        <outletCollection property="speciesButtons" destination="amw-FC-Vbx" collectionClass="NSMutableArray" id="zR2-A0-sMM"/>
+                        <outletCollection property="speciesButtons" destination="qa7-sp-gCi" collectionClass="NSMutableArray" id="VSg-KY-9zD"/>
+                        <outletCollection property="speciesButtons" destination="f3v-UO-qjJ" collectionClass="NSMutableArray" id="icE-EN-IYT"/>
+                        <outletCollection property="speciesButtons" destination="jzz-fh-QJb" collectionClass="NSMutableArray" id="cD8-RK-lao"/>
+                        <outletCollection property="speciesButtons" destination="IrL-jk-7CW" collectionClass="NSMutableArray" id="gYE-Hf-3r4"/>
+                        <outletCollection property="speciesButtons" destination="9sg-3g-xfN" collectionClass="NSMutableArray" id="j4r-Wf-bpB"/>
+                        <outletCollection property="genderButtons" destination="cZG-Ad-ZAx" collectionClass="NSMutableArray" id="nyq-6T-b1t"/>
+                        <outletCollection property="genderButtons" destination="wRC-n5-4Ww" collectionClass="NSMutableArray" id="J8U-Qc-Ygg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhE-Wb-3gU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="-531"/>
+            <point key="canvasLocation" x="2203.8167938931297" y="-745.07042253521126"/>
         </scene>
         <!--Detail Characters View Controller-->
         <scene sceneID="dQ5-3b-5LI">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="aOI-Xn-opy" customClass="DetailCharactersViewController" customModule="starWars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailCharactersViewController" id="aOI-Xn-opy" customClass="DetailCharactersViewController" customModule="starWars" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ih-Fb-DMp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liw-RZ-u04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="-532"/>
+            <point key="canvasLocation" x="2972" y="-745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JIS-0b-ael">
@@ -585,6 +716,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="899" height="1600"/>
+        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="logo.png" width="258" height="157"/>
         <namedColor name="starColor">
             <color red="0.99299997091293335" green="0.99299997091293335" blue="0.99299997091293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

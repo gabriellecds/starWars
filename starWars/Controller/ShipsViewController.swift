@@ -27,6 +27,8 @@ class ShipsViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        fetchShips(searchText: "")
     }
     
     func fetchShips(searchText: String) {

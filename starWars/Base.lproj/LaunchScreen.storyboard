@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_dark.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-yy-YHq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="n01-kL-R1r">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="WKy-DR-0ci">
@@ -27,11 +27,11 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="WKy-DR-0ci" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4ZI-bn-yU9"/>
-                            <constraint firstItem="a6m-yy-YHq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="I8u-3l-7ro"/>
-                            <constraint firstAttribute="bottom" secondItem="a6m-yy-YHq" secondAttribute="bottom" id="Q54-K1-QDw"/>
-                            <constraint firstItem="a6m-yy-YHq" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="YvG-h7-77A"/>
+                            <constraint firstItem="n01-kL-R1r" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="NQU-ZF-YND"/>
                             <constraint firstItem="WKy-DR-0ci" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aoO-L6-FV6"/>
-                            <constraint firstItem="a6m-yy-YHq" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="asT-7e-gxY"/>
+                            <constraint firstItem="n01-kL-R1r" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="b0x-kz-qwE"/>
+                            <constraint firstAttribute="bottom" secondItem="n01-kL-R1r" secondAttribute="bottom" id="gzR-gJ-92I"/>
+                            <constraint firstItem="n01-kL-R1r" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="iv6-Yy-IgB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,7 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_dark.jpeg" width="899" height="1600"/>
+        <image name="background" width="899" height="1600"/>
         <image name="logo.png" width="258" height="157"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
