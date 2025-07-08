@@ -39,7 +39,6 @@ class ShipsViewController: UIViewController, UITableViewDataSource, UITableViewD
                     let result = try JSONDecoder().decode(ShipResponse.self, from: data)
                     DispatchQueue.main.async {
                         self.ships = result.results
-                        print("Naves encontradas: \(self.ships.map { $0.name })")  // Debug
                         self.tableView.reloadData()
                     }
                 } catch {
