@@ -1,25 +1,5 @@
 import UIKit
 
-struct Character: Codable {
-    let name: String
-    let height: String
-    let mass: String
-    let hair_color: String
-    let skin_color: String
-    let eye_color: String
-    let birth_year: String
-    let gender: String
-    let species: [String]
-}
-
-struct CharacterResponse: Codable {
-    let results: [Character]
-}
-
-struct Species: Codable {
-    let name: String
-}
-
 class CharactersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     
@@ -31,8 +11,21 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var emptyStateView: UIView!
+    
     @IBAction func filterButton(_ sender: UIButton) {
         filterView.isHidden.toggle()
+        
+        if !filterView.isHidden {
+               view.bringSubviewToFront(filterView)
+           } else {
+               // Quando esconder o filtro, traz a tableView ou emptyState de volta pra frente
+               if characters.isEmpty {
+                   view.bringSubviewToFront(emptyStateView)
+               } else {
+                   view.bringSubviewToFront(tableView)
+               }
+           }
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -65,45 +58,39 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         searchBar.delegate = self
         filterView.isHidden = true
+        emptyStateView.isHidden = true
         
         fetchCharacters(searchText: "")
     
     }
     
     @IBAction func speciesButtonTapped(_ sender: UIButton) {
-        //print("🔘 Botão clicado: tag \(sender.tag)")
-        // Destaque visual: deixa todos apagados, só o clicado com destaque
-        // Remove seleção anterior visual (opcional)
         speciesButtons.forEach { $0.alpha = 0.5 }
         sender.alpha = 1.0
         
         if let speciesName = speciesByTag[sender.tag]{
             selectedSpecies = speciesName
-            //print("✅ Espécie selecionada via tag: \(speciesName)")
         } else {
             selectedSpecies = nil
-            //print("⚠️ Nenhuma espécie encontrada para essa tag.")
         }
     }
     
     @IBAction func genderButtonTapped(_ sender: UIButton) {
-        //print("👕 Botão de gênero clicado: tag \(sender.tag)")
-        
         genderButtons.forEach { $0.alpha = 0.5 }
         sender.alpha = 1.0
 
         if let gender = genderByTag[sender.tag] {
             selectedGender = gender
-            //print("✅ Gênero selecionado via tag: \(gender)")
         } else {
             selectedGender = nil
-            //print("⚠️ Nenhum gênero encontrado para essa tag.")
         }
     }
     
     @IBAction func applyFilters(_ sender: UIButton) {
         fetchCharacters(searchText: searchBar.text ?? "")
         filterView.isHidden = true
+        emptyStateView.isHidden = true
+        tableView.isHidden = false
     }
     
     @IBAction func resetFilters(_ sender: UIButton) {
@@ -116,6 +103,8 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
 
         fetchCharacters(searchText: searchBar.text ?? "")
         filterView.isHidden = true
+        emptyStateView.isHidden = true
+        tableView.isHidden = false
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -154,7 +143,6 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
                     }
 
                     group.notify(queue: .main) {
-                        // Atualiza o cache global
                         for (url, name) in tempCache {
                             self.speciesNameCache[url] = name
                         }
@@ -168,7 +156,6 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
                         }
 
                         if let speciesFilter = self.selectedSpecies {
-                            //print("Filtro de espécie selecionado: \(speciesFilter)")
                             filtered = filtered.filter { character in
                                 character.species.contains { url in
                                     self.speciesNameCache[url] == speciesFilter
@@ -178,6 +165,15 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
 
                         self.characters = filtered
                         self.tableView.reloadData()
+
+                        if self.characters.isEmpty {
+                            self.emptyStateView.isHidden = false
+                            self.tableView.isHidden = true
+                        } else {
+                            self.emptyStateView.isHidden = true
+                            self.tableView.isHidden = false
+                            self.view.bringSubviewToFront(self.tableView) // garante que table view fique visível
+                        }
                     }
 
                 } catch {
@@ -186,6 +182,7 @@ class CharactersViewController: UIViewController, UITableViewDataSource, UITable
             }
         }.resume()
     }
+
 
     //MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -22,13 +22,13 @@ class DetailCharactersViewController: UIViewController {
 
     func configureView (){
           guard let character = character else { return }
-          nameLabel.text = "Name: \(character.name)"
-          heightLabel.text = "Height: \(character.height)"
-          massLabel.text = "Mass: \(character.mass) KILOGRAMS"
+          nameLabel.text = "\(character.name)"
+          heightLabel.text = "Height: \(character.height) cm"
+          massLabel.text = "Mass: \(character.mass) kg"
           hairColorLabel.text = "Hair Color: \(character.hair_color)"
           skinColorLabel.text = "Skin Color: \(character.skin_color)"
           eyeColorLabel.text = "Eye Color: \(character.eye_color)"
-          birthYearLabel.text = "Birth Year: \(character.birth_year)"
+          birthYearLabel.text = "\(character.birth_year)"
           genderLabel.text = "Gender: \(character.gender)"
     }
     
